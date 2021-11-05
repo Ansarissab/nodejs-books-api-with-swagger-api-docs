@@ -1,6 +1,6 @@
-const express = require("express");
-const router = express.router();
-const { nanoid } = require("nanoid");
+import express from "express";
+const router = express.Router();
+import { nanoid } from "nanoid";
 const id_length = 8;
 
 // GET all books
@@ -61,3 +61,5 @@ router.delete("/:id", (req, res) => {
 
   res.status(204).send({ message: "Book deleted successfully." });
 });
+
+export default router;
