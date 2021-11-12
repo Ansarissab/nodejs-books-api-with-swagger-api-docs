@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node --experimental-modules index.js",
+    "start": "nodemon --experimental-modules index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -17,6 +17,7 @@
     "lowdb": "^3.0.0",
     "morgan": "^1.10.0",
     "nanoid": "^3.1.30",
+    "nodemon": "^2.0.15",
     "swagger-jsdoc": "^6.1.0",
     "swagger-ui-express": "^4.1.6"
   }

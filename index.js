@@ -1,7 +1,6 @@
 import express from "express";
 import cors from "cors";
 import morgan from "morgan";
-import { Low, JSONFile } from "lowdb";
 const PORT = process.env.PORT || 5000;
 
 import swaggerUI from "swagger-ui-express";
@@ -22,11 +21,9 @@ const options = {
 };
 
 const specs = swaggerJsDoc(options);
-const db = new Low(new JSONFile("file.json"));
 
 const app = express();
 
-app.db = db;
 app.use("/docs", swaggerUI.serve, swaggerUI.setup(specs));
 app.use(cors());
 app.use(express.json());
