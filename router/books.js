@@ -13,6 +13,46 @@ await db.read();
 
 const id_length = 8;
 
+/***
+ * @swagger
+ * components:
+ *  schemas:
+ *    Book:
+ *      type: Object
+ *      required:
+ *          - author
+ *          - title
+ *      properties:
+ *          id:
+ *            type: string
+ *            description: The auto generated id of the book.
+ *          author:
+ *             type: string
+ *             description: The author of the book.
+ *          title:
+ *             type: string
+ *             description: The title of the book.
+ *      example:
+ *        id: 12s233g5
+ *        title: Harry Potter
+ *        author: JK Rowling
+ */
+
+/**
+ * @swagger
+ * /books:
+ *    get:
+ *      summary: Get the list of all the books.
+ *      responses:
+ *        200:
+ *          description: The list of books.
+ *          content:
+ *            application/json:
+ *              schema:
+ *                type: array
+ *                items:
+ *                  $ref: "#/components/schemas/Book"
+ */
 // GET all books
 router.get("/", (req, res) => {
   const books = db.data.books;
